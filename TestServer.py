@@ -47,12 +47,12 @@ class ClientServer(object):
         pass
     
     def ClientConnHeartBeatTimer(self, ioloop):
-#       log.debug('heartbeat ...')
-#       for c in self._fd_map.values():
-#           if c._online:
-#               c.heartbeat()
-#           if not c._connected:
-#               del self._fd_map[c._socket.fileno()]
+        log.debug('heartbeat ...')
+        for c in self._fd_map.values():
+            if c._online:
+                c.heartbeat()
+            if not c._connected:
+                del self._fd_map[c._socket.fileno()]
         log.info('online users cnt: {}'.format(len(self._fd_map)))
         self._io_loop.add_timeout(time.time() + 30, self.ClientConnHeartBeatTimer, self._io_loop)
 
