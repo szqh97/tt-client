@@ -96,6 +96,7 @@ class ClientConn(object):
         else:
             if len(pduheaderbuf) != 16:
                 log.error("read pdu len errror, len: {}".format(len(pduheaderbuf)))
+                self._connected = False
                 return 
             try:
                 pdu.FromString(pduheaderbuf)

@@ -85,7 +85,6 @@ class ClientServer(object):
             del self._fd_map[fd]
         conn = self._fd_map.get(fd, None)
         if conn is None:
-            log.info("conn is closed or disconnected, user_id: {}".format(conn._m_user_id))
             pass
         else:
             if conn._connected  :
