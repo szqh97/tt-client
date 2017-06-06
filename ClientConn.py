@@ -15,6 +15,7 @@ from IM.Login_pb2 import *
 from IM.BaseDefine_pb2 import *
 from IM.Buddy_pb2 import *
 from IM.Message_pb2 import *
+from IM.Group_pb2 import *
 import ClientConnReq 
 from tornado.ioloop import IOLoop
 from config import cnt, MIN_TO_ID, MAX_TO_ID, MIN_FROM_ID, MAX_FROM_ID
@@ -33,7 +34,7 @@ class ClientConn(object):
     """Docstring for ClientConn. """
 
     def __init__(self, username,
-            ttserver="http://192.168.1.15/msg_server"):
+            ttserver="http://app-test.kaipao.cc/msg_server"):
         """
         ttserver is like: http://192.168.1.15:8400/msg_server
         """
@@ -137,6 +138,8 @@ class ClientConn(object):
             self.handleHeartBeat(pdu)
         elif pdu.command_id == CID_MSG_READ_NOTIFY:
             self.handleReadNotify(pdu)
+        elif pdu.command_id == CID_GROUP_CREATE_RESPONSE:
+            self.handleCreateGroupResponse(pdu)
         else:
             log.info('Invalid command_id: {}'.format(pdu.command_id))
     
@@ -223,6 +226,10 @@ class ClientConn(object):
 
         pass
 
+    def handleCreateGroupResponse(self, pdu):
+        log.info("in handleCreateGroupResponse..")
+        pass
+
     def hanledUserInfo(self, pdu):
         pass
 
@@ -254,9 +261,18 @@ class ClientConn(object):
         self._online = False
         self._socket.close()
         log.info('user {} closed'.format(self.username))
+
+    def createGroup(self):
+        user_id = 2396
+        u_list = [12460, 13, 5]
+        pdu_msg =ClientConnReq._CreateGroupReq(2396,  "test-g-1",u_list, "http://kaipao.cc/default_avatar.png" )
+        time.sleep(4)
+        log.info("in createGroupReq")
+        self._socket.send(pdu_msg)
+
         
 #### FOR TEST ONLY ####
-#c = ClientConn("test1")
+#c = ClientConn("dj352801")
 #c.connect()
 #c.login()
 

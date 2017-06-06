@@ -142,3 +142,19 @@ def _MsgReadAck(from_user_id, session_id, msg_id, session_type=BaseDefine_pb2.SE
     pdu.setCommandId(BaseDefine_pb2.CID_MSG_READ_ACK)
     return pdu.SerializeToString()
 
+def _CreateGroupReq(user_id, group_name, user_list, avatar):
+    log.debug("_CreateGroupReq")
+    req = Group_pb2.IMGroupCreateReq()
+    req.Clear()
+    req.user_id = user_id
+    req.group_type = 1
+    req.group_name = group_name
+    req.member_id_list.extend(user_list)
+    req.group_avatar = avatar
+    pdu = ImPdu.ImPdu()
+    pdu.setMsg(req.SerializeToString())
+    pdu.setServiceId(BaseDefine_pb2.SID_GROUP)
+    pdu.setCommandId(BaseDefine_pb2.CID_GROUP_CREATE_REQUEST)
+    return pdu.SerializeToString()
+
+
