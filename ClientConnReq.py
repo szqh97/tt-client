@@ -157,4 +157,30 @@ def _CreateGroupReq(user_id, group_name, user_list, avatar):
     pdu.setCommandId(BaseDefine_pb2.CID_GROUP_CREATE_REQUEST)
     return pdu.SerializeToString()
 
+def _DisbandGroupReq(user_id, group_id):
+    log.info("user: %d disband group: %d", user_id, group_id)
+    req = Group_pb2.IMGroupRemoveGroupRequest()
+    req.Clear()
+    req.user_id = user_id
+    req.group_id = group_id
+    pdu = ImPdu.ImPdu()
+    pdu.setMsg(req.SerializeToString())
+    pdu.setServiceId(BaseDefine_pb2.SID_GROUP)
+    pdu.setCommandId(BaseDefine_pb2.CID_GROUP_REMOVE_GROUP_REQUEST)
+    return pdu.SerializeToString()
+
+def _ChangeGroupMembmber(user_id, group_id,  add_user_list, ctype = 1):
+    log.info("user_id: %d add users to group: %d", user_id, group_id)
+    req = Group_pb2.IMGroupChangeMemberReq();
+    req.Clear()
+    req.user_id = user_id
+    req.group_id = group_id
+    req.member_id_list.extend(add_user_list)
+    req.change_type = ctype 
+    pdu = ImPdu.ImPdu()
+    pdu.setMsg(req.SerializeToString())
+    pdu.setServiceId(BaseDefine_pb2.SID_GROUP)
+    pdu.setCommandId(BaseDefine_pb2.CID_GROUP_CHANGE_MEMBER_REQUEST)
+    return pdu.SerializeToString()
+
 

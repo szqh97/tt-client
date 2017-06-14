@@ -19,7 +19,7 @@ import IM.BaseDefine_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='IM.Server.proto',
   package='IM.Server',
-  serialized_pb=_b('\n\x0fIM.Server.proto\x12\tIM.Server\x1a\x13IM.BaseDefine.proto\"%\n\x13IMStopReceivePacket\x12\x0e\n\x06result\x18\x01 \x02(\r\"I\n\rIMValidateReq\x12\x11\n\tuser_name\x18\x01 \x02(\t\x12\x10\n\x08password\x18\x02 \x02(\t\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x8f\x01\n\rIMValidateRsp\x12\x11\n\tuser_name\x18\x01 \x02(\t\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x15\n\rresult_string\x18\x03 \x01(\t\x12*\n\tuser_info\x18\x04 \x01(\x0b\x32\x17.IM.BaseDefine.UserInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\";\n\x13IMGetDeviceTokenReq\x12\x0f\n\x07user_id\x18\x01 \x03(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"a\n\x13IMGetDeviceTokenRsp\x12\x35\n\x0fuser_token_info\x18\x01 \x03(\x0b\x32\x1c.IM.BaseDefine.UserTokenInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x1b\n\tIMRoleSet\x12\x0e\n\x06master\x18\x01 \x02(\r\"I\n\x10IMOnlineUserInfo\x12\x35\n\x0euser_stat_list\x18\x01 \x03(\x0b\x32\x1d.IM.BaseDefine.ServerUserStat\"v\n\rIMMsgServInfo\x12\x0b\n\x03ip1\x18\x01 \x02(\t\x12\x0b\n\x03ip2\x18\x02 \x02(\t\x12\x0c\n\x04port\x18\x03 \x02(\r\x12\x14\n\x0cmax_conn_cnt\x18\x04 \x02(\r\x12\x14\n\x0c\x63ur_conn_cnt\x18\x05 \x02(\r\x12\x11\n\thost_name\x18\x06 \x02(\t\"j\n\x12IMUserStatusUpdate\x12\x13\n\x0buser_status\x18\x01 \x02(\r\x12\x0f\n\x07user_id\x18\x02 \x02(\r\x12.\n\x0b\x63lient_type\x18\x03 \x02(\x0e\x32\x19.IM.BaseDefine.ClientType\"7\n\x0fIMUserCntUpdate\x12\x13\n\x0buser_action\x18\x01 \x02(\r\x12\x0f\n\x07user_id\x18\x02 \x02(\r\"c\n\x10IMServerKickUser\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12.\n\x0b\x63lient_type\x18\x02 \x02(\x0e\x32\x19.IM.BaseDefine.ClientType\x12\x0e\n\x06reason\x18\x03 \x02(\r\"D\n\x1bIMServerPCLoginStatusNotify\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x14\n\x0clogin_status\x18\x02 \x02(\r\"e\n\x0fIMPushToUserReq\x12\r\n\x05\x66lash\x18\x01 \x02(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x02(\t\x12\x35\n\x0fuser_token_list\x18\x03 \x03(\x0b\x32\x1c.IM.BaseDefine.UserTokenInfo\"F\n\x0fIMPushToUserRsp\x12\x33\n\x10push_result_list\x18\x01 \x03(\x0b\x32\x19.IM.BaseDefine.PushResult\"M\n\x13IMGroupGetShieldReq\x12\x10\n\x08group_id\x18\x01 \x02(\r\x12\x0f\n\x07user_id\x18\x02 \x03(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"u\n\x13IMGroupGetShieldRsp\x12\x10\n\x08group_id\x18\x01 \x02(\r\x12\x37\n\x12shield_status_list\x18\x02 \x03(\x0b\x32\x1b.IM.BaseDefine.ShieldStatus\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\xad\x01\n\x11IMFileTransferReq\x12\x14\n\x0c\x66rom_user_id\x18\x01 \x02(\r\x12\x12\n\nto_user_id\x18\x02 \x02(\r\x12\x11\n\tfile_name\x18\x03 \x02(\t\x12\x11\n\tfile_size\x18\x04 \x02(\r\x12\x33\n\ntrans_mode\x18\x05 \x02(\x0e\x32\x1f.IM.BaseDefine.TransferFileType\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\xd3\x01\n\x11IMFileTransferRsp\x12\x13\n\x0bresult_code\x18\x01 \x02(\r\x12\x14\n\x0c\x66rom_user_id\x18\x02 \x02(\r\x12\x12\n\nto_user_id\x18\x03 \x02(\r\x12\x11\n\tfile_name\x18\x04 \x01(\t\x12\x11\n\tfile_size\x18\x05 \x01(\r\x12\x0f\n\x07task_id\x18\x06 \x01(\t\x12\x33\n\ntrans_mode\x18\x07 \x01(\x0e\x32\x1f.IM.BaseDefine.TransferFileType\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x13\n\x11IMFileServerIPReq\"@\n\x11IMFileServerIPRsp\x12+\n\x0cip_addr_list\x18\x01 \x03(\x0b\x32\x15.IM.BaseDefine.IpAddrB\x02H\x03')
+  serialized_pb=_b('\n\x0fIM.Server.proto\x12\tIM.Server\x1a\x13IM.BaseDefine.proto\"%\n\x13IMStopReceivePacket\x12\x0e\n\x06result\x18\x01 \x02(\r\"\\\n\rIMValidateReq\x12\x11\n\tuser_name\x18\x01 \x02(\t\x12\x10\n\x08password\x18\x02 \x02(\t\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\x12\x11\n\tdevice_id\x18\x15 \x01(\t\"\x8f\x01\n\rIMValidateRsp\x12\x11\n\tuser_name\x18\x01 \x02(\t\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x15\n\rresult_string\x18\x03 \x01(\t\x12*\n\tuser_info\x18\x04 \x01(\x0b\x32\x17.IM.BaseDefine.UserInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\";\n\x13IMGetDeviceTokenReq\x12\x0f\n\x07user_id\x18\x01 \x03(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"a\n\x13IMGetDeviceTokenRsp\x12\x35\n\x0fuser_token_info\x18\x01 \x03(\x0b\x32\x1c.IM.BaseDefine.UserTokenInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x1b\n\tIMRoleSet\x12\x0e\n\x06master\x18\x01 \x02(\r\"I\n\x10IMOnlineUserInfo\x12\x35\n\x0euser_stat_list\x18\x01 \x03(\x0b\x32\x1d.IM.BaseDefine.ServerUserStat\"v\n\rIMMsgServInfo\x12\x0b\n\x03ip1\x18\x01 \x02(\t\x12\x0b\n\x03ip2\x18\x02 \x02(\t\x12\x0c\n\x04port\x18\x03 \x02(\r\x12\x14\n\x0cmax_conn_cnt\x18\x04 \x02(\r\x12\x14\n\x0c\x63ur_conn_cnt\x18\x05 \x02(\r\x12\x11\n\thost_name\x18\x06 \x02(\t\"j\n\x12IMUserStatusUpdate\x12\x13\n\x0buser_status\x18\x01 \x02(\r\x12\x0f\n\x07user_id\x18\x02 \x02(\r\x12.\n\x0b\x63lient_type\x18\x03 \x02(\x0e\x32\x19.IM.BaseDefine.ClientType\"7\n\x0fIMUserCntUpdate\x12\x13\n\x0buser_action\x18\x01 \x02(\r\x12\x0f\n\x07user_id\x18\x02 \x02(\r\"c\n\x10IMServerKickUser\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12.\n\x0b\x63lient_type\x18\x02 \x02(\x0e\x32\x19.IM.BaseDefine.ClientType\x12\x0e\n\x06reason\x18\x03 \x02(\r\"D\n\x1bIMServerPCLoginStatusNotify\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x14\n\x0clogin_status\x18\x02 \x02(\r\"e\n\x0fIMPushToUserReq\x12\r\n\x05\x66lash\x18\x01 \x02(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x02(\t\x12\x35\n\x0fuser_token_list\x18\x03 \x03(\x0b\x32\x1c.IM.BaseDefine.UserTokenInfo\"F\n\x0fIMPushToUserRsp\x12\x33\n\x10push_result_list\x18\x01 \x03(\x0b\x32\x19.IM.BaseDefine.PushResult\"M\n\x13IMGroupGetShieldReq\x12\x10\n\x08group_id\x18\x01 \x02(\r\x12\x0f\n\x07user_id\x18\x02 \x03(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"u\n\x13IMGroupGetShieldRsp\x12\x10\n\x08group_id\x18\x01 \x02(\r\x12\x37\n\x12shield_status_list\x18\x02 \x03(\x0b\x32\x1b.IM.BaseDefine.ShieldStatus\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\xad\x01\n\x11IMFileTransferReq\x12\x14\n\x0c\x66rom_user_id\x18\x01 \x02(\r\x12\x12\n\nto_user_id\x18\x02 \x02(\r\x12\x11\n\tfile_name\x18\x03 \x02(\t\x12\x11\n\tfile_size\x18\x04 \x02(\r\x12\x33\n\ntrans_mode\x18\x05 \x02(\x0e\x32\x1f.IM.BaseDefine.TransferFileType\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\xd3\x01\n\x11IMFileTransferRsp\x12\x13\n\x0bresult_code\x18\x01 \x02(\r\x12\x14\n\x0c\x66rom_user_id\x18\x02 \x02(\r\x12\x12\n\nto_user_id\x18\x03 \x02(\r\x12\x11\n\tfile_name\x18\x04 \x01(\t\x12\x11\n\tfile_size\x18\x05 \x01(\r\x12\x0f\n\x07task_id\x18\x06 \x01(\t\x12\x33\n\ntrans_mode\x18\x07 \x01(\x0e\x32\x1f.IM.BaseDefine.TransferFileType\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x13\n\x11IMFileServerIPReq\"@\n\x11IMFileServerIPRsp\x12+\n\x0cip_addr_list\x18\x01 \x03(\x0b\x32\x15.IM.BaseDefine.IpAddrB\x02H\x03')
   ,
   dependencies=[IM.BaseDefine_pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -85,6 +85,13 @@ _IMVALIDATEREQ = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='device_id', full_name='IM.Server.IMValidateReq.device_id', index=3,
+      number=21, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -97,7 +104,7 @@ _IMVALIDATEREQ = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=90,
-  serialized_end=163,
+  serialized_end=182,
 )
 
 
@@ -154,8 +161,8 @@ _IMVALIDATERSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=166,
-  serialized_end=309,
+  serialized_start=185,
+  serialized_end=328,
 )
 
 
@@ -191,8 +198,8 @@ _IMGETDEVICETOKENREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=311,
-  serialized_end=370,
+  serialized_start=330,
+  serialized_end=389,
 )
 
 
@@ -228,8 +235,8 @@ _IMGETDEVICETOKENRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=372,
-  serialized_end=469,
+  serialized_start=391,
+  serialized_end=488,
 )
 
 
@@ -258,8 +265,8 @@ _IMROLESET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=471,
-  serialized_end=498,
+  serialized_start=490,
+  serialized_end=517,
 )
 
 
@@ -288,8 +295,8 @@ _IMONLINEUSERINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=500,
-  serialized_end=573,
+  serialized_start=519,
+  serialized_end=592,
 )
 
 
@@ -353,8 +360,8 @@ _IMMSGSERVINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=575,
-  serialized_end=693,
+  serialized_start=594,
+  serialized_end=712,
 )
 
 
@@ -397,8 +404,8 @@ _IMUSERSTATUSUPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=695,
-  serialized_end=801,
+  serialized_start=714,
+  serialized_end=820,
 )
 
 
@@ -434,8 +441,8 @@ _IMUSERCNTUPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=803,
-  serialized_end=858,
+  serialized_start=822,
+  serialized_end=877,
 )
 
 
@@ -478,8 +485,8 @@ _IMSERVERKICKUSER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=860,
-  serialized_end=959,
+  serialized_start=879,
+  serialized_end=978,
 )
 
 
@@ -515,8 +522,8 @@ _IMSERVERPCLOGINSTATUSNOTIFY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=961,
-  serialized_end=1029,
+  serialized_start=980,
+  serialized_end=1048,
 )
 
 
@@ -559,8 +566,8 @@ _IMPUSHTOUSERREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1031,
-  serialized_end=1132,
+  serialized_start=1050,
+  serialized_end=1151,
 )
 
 
@@ -589,8 +596,8 @@ _IMPUSHTOUSERRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1134,
-  serialized_end=1204,
+  serialized_start=1153,
+  serialized_end=1223,
 )
 
 
@@ -633,8 +640,8 @@ _IMGROUPGETSHIELDREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1206,
-  serialized_end=1283,
+  serialized_start=1225,
+  serialized_end=1302,
 )
 
 
@@ -677,8 +684,8 @@ _IMGROUPGETSHIELDRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1285,
-  serialized_end=1402,
+  serialized_start=1304,
+  serialized_end=1421,
 )
 
 
@@ -742,8 +749,8 @@ _IMFILETRANSFERREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1405,
-  serialized_end=1578,
+  serialized_start=1424,
+  serialized_end=1597,
 )
 
 
@@ -821,8 +828,8 @@ _IMFILETRANSFERRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1581,
-  serialized_end=1792,
+  serialized_start=1600,
+  serialized_end=1811,
 )
 
 
@@ -844,8 +851,8 @@ _IMFILESERVERIPREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1794,
-  serialized_end=1813,
+  serialized_start=1813,
+  serialized_end=1832,
 )
 
 
@@ -874,8 +881,8 @@ _IMFILESERVERIPRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1815,
-  serialized_end=1879,
+  serialized_start=1834,
+  serialized_end=1898,
 )
 
 _IMVALIDATERSP.fields_by_name['user_info'].message_type = IM.BaseDefine_pb2._USERINFO

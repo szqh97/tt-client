@@ -19,7 +19,7 @@ import IM.BaseDefine_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='IM.Group.proto',
   package='IM.Group',
-  serialized_pb=_b('\n\x0eIM.Group.proto\x12\x08IM.Group\x1a\x13IM.BaseDefine.proto\"<\n\x14IMNormalGroupListReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"y\n\x14IMNormalGroupListRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12;\n\x12group_version_list\x18\x02 \x03(\x0b\x32\x1f.IM.BaseDefine.GroupVersionInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"w\n\x12IMGroupInfoListReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12;\n\x12group_version_list\x18\x02 \x03(\x0b\x32\x1f.IM.BaseDefine.GroupVersionInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"m\n\x12IMGroupInfoListRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x31\n\x0fgroup_info_list\x18\x02 \x03(\x0b\x32\x18.IM.BaseDefine.GroupInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\xb8\x01\n\x10IMGroupCreateReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12<\n\ngroup_type\x18\x02 \x02(\x0e\x32\x18.IM.BaseDefine.GroupType:\x0eGROUP_TYPE_TMP\x12\x12\n\ngroup_name\x18\x03 \x02(\t\x12\x14\n\x0cgroup_avatar\x18\x04 \x02(\t\x12\x16\n\x0emember_id_list\x18\x05 \x03(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x89\x01\n\x10IMGroupCreateRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x10\n\x08group_id\x18\x03 \x01(\r\x12\x12\n\ngroup_name\x18\x04 \x02(\t\x12\x14\n\x0cuser_id_list\x18\x05 \x03(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x9d\x01\n\x16IMGroupChangeMemberReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x33\n\x0b\x63hange_type\x18\x02 \x02(\x0e\x32\x1e.IM.BaseDefine.GroupModifyType\x12\x10\n\x08group_id\x18\x03 \x02(\r\x12\x16\n\x0emember_id_list\x18\x04 \x03(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\xce\x01\n\x16IMGroupChangeMemberRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x33\n\x0b\x63hange_type\x18\x02 \x02(\x0e\x32\x1e.IM.BaseDefine.GroupModifyType\x12\x13\n\x0bresult_code\x18\x03 \x02(\r\x12\x10\n\x08group_id\x18\x04 \x02(\r\x12\x18\n\x10\x63ur_user_id_list\x18\x05 \x03(\r\x12\x18\n\x10\x63hg_user_id_list\x18\x06 \x03(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"a\n\x10IMGroupShieldReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x10\n\x08group_id\x18\x02 \x02(\r\x12\x15\n\rshield_status\x18\x03 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"_\n\x10IMGroupShieldRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x10\n\x08group_id\x18\x02 \x02(\r\x12\x13\n\x0bresult_code\x18\x03 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\xa7\x01\n\x19IMGroupChangeMemberNotify\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x33\n\x0b\x63hange_type\x18\x02 \x02(\x0e\x32\x1e.IM.BaseDefine.GroupModifyType\x12\x10\n\x08group_id\x18\x03 \x02(\r\x12\x18\n\x10\x63ur_user_id_list\x18\x04 \x03(\r\x12\x18\n\x10\x63hg_user_id_list\x18\x05 \x03(\rB\x1b\n\x17\x63om.mogujie.tt.protobufH\x03')
+  serialized_pb=_b('\n\x0eIM.Group.proto\x12\x08IM.Group\x1a\x13IM.BaseDefine.proto\"<\n\x14IMNormalGroupListReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"y\n\x14IMNormalGroupListRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12;\n\x12group_version_list\x18\x02 \x03(\x0b\x32\x1f.IM.BaseDefine.GroupVersionInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"w\n\x12IMGroupInfoListReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12;\n\x12group_version_list\x18\x02 \x03(\x0b\x32\x1f.IM.BaseDefine.GroupVersionInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"m\n\x12IMGroupInfoListRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x31\n\x0fgroup_info_list\x18\x02 \x03(\x0b\x32\x18.IM.BaseDefine.GroupInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\xbb\x01\n\x10IMGroupCreateReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12?\n\ngroup_type\x18\x02 \x02(\x0e\x32\x18.IM.BaseDefine.GroupType:\x11GROUP_TYPE_NORMAL\x12\x12\n\ngroup_name\x18\x03 \x02(\t\x12\x14\n\x0cgroup_avatar\x18\x04 \x02(\t\x12\x16\n\x0emember_id_list\x18\x05 \x03(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x89\x01\n\x10IMGroupCreateRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x10\n\x08group_id\x18\x03 \x01(\r\x12\x12\n\ngroup_name\x18\x04 \x02(\t\x12\x14\n\x0cuser_id_list\x18\x05 \x03(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"}\n\x16IMGroupChangeMemberReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0b\x63hange_type\x18\x02 \x02(\r\x12\x10\n\x08group_id\x18\x03 \x02(\r\x12\x16\n\x0emember_id_list\x18\x04 \x03(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\xae\x01\n\x16IMGroupChangeMemberRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0b\x63hange_type\x18\x02 \x02(\r\x12\x13\n\x0bresult_code\x18\x03 \x02(\r\x12\x10\n\x08group_id\x18\x04 \x02(\r\x12\x18\n\x10\x63ur_user_id_list\x18\x05 \x03(\r\x12\x18\n\x10\x63hg_user_id_list\x18\x06 \x03(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"a\n\x10IMGroupShieldReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x10\n\x08group_id\x18\x02 \x02(\r\x12\x15\n\rshield_status\x18\x03 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"_\n\x10IMGroupShieldRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x10\n\x08group_id\x18\x02 \x02(\r\x12\x13\n\x0bresult_code\x18\x03 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x87\x01\n\x19IMGroupChangeMemberNotify\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0b\x63hange_type\x18\x02 \x02(\r\x12\x10\n\x08group_id\x18\x03 \x02(\r\x12\x18\n\x10\x63ur_user_id_list\x18\x04 \x03(\r\x12\x18\n\x10\x63hg_user_id_list\x18\x05 \x03(\r\"S\n\x19IMGroupRemoveGroupRequest\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x10\n\x08group_id\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"{\n\x16IMGroupRemoveGroupResp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x10\n\x08group_id\x18\x02 \x02(\r\x12\x13\n\x0bresult_code\x18\x03 \x02(\r\x12\x14\n\x0cuser_id_list\x18\x04 \x03(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"q\n\x14IMGroupUpdateInfoReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x0c\n\x04type\x18\x02 \x02(\r\x12\x10\n\x08group_id\x18\x03 \x02(\r\x12\x13\n\x0bupdate_data\x18\x04 \x02(\x0c\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x8e\x01\n\x15IMGroupUpdateInfoResp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x0c\n\x04type\x18\x02 \x02(\r\x12\x13\n\x0bresult_code\x18\x03 \x02(\r\x12,\n\ngroup_info\x18\x04 \x01(\x0b\x32\x18.IM.BaseDefine.GroupInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"o\n\x12IMGroupEventNotify\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x0c\n\x04type\x18\x02 \x02(\r\x12\x10\n\x08group_id\x18\x03 \x01(\r\x12\x14\n\x0cuser_id_list\x18\x04 \x03(\r\x12\x12\n\nevent_data\x18\x05 \x01(\x0c\x42\x1b\n\x17\x63om.mogujie.tt.protobufH\x03')
   ,
   dependencies=[IM.BaseDefine_pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -213,7 +213,7 @@ _IMGROUPCREATEREQ = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='group_type', full_name='IM.Group.IMGroupCreateReq.group_type', index=1,
       number=2, type=14, cpp_type=8, label=2,
-      has_default_value=True, default_value=2,
+      has_default_value=True, default_value=1,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -257,7 +257,7 @@ _IMGROUPCREATEREQ = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=467,
-  serialized_end=651,
+  serialized_end=654,
 )
 
 
@@ -321,8 +321,8 @@ _IMGROUPCREATERSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=654,
-  serialized_end=791,
+  serialized_start=657,
+  serialized_end=794,
 )
 
 
@@ -342,8 +342,8 @@ _IMGROUPCHANGEMEMBERREQ = _descriptor.Descriptor(
       options=None),
     _descriptor.FieldDescriptor(
       name='change_type', full_name='IM.Group.IMGroupChangeMemberReq.change_type', index=1,
-      number=2, type=14, cpp_type=8, label=2,
-      has_default_value=False, default_value=1,
+      number=2, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -379,8 +379,8 @@ _IMGROUPCHANGEMEMBERREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=794,
-  serialized_end=951,
+  serialized_start=796,
+  serialized_end=921,
 )
 
 
@@ -400,8 +400,8 @@ _IMGROUPCHANGEMEMBERRSP = _descriptor.Descriptor(
       options=None),
     _descriptor.FieldDescriptor(
       name='change_type', full_name='IM.Group.IMGroupChangeMemberRsp.change_type', index=1,
-      number=2, type=14, cpp_type=8, label=2,
-      has_default_value=False, default_value=1,
+      number=2, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -451,8 +451,8 @@ _IMGROUPCHANGEMEMBERRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=954,
-  serialized_end=1160,
+  serialized_start=924,
+  serialized_end=1098,
 )
 
 
@@ -502,8 +502,8 @@ _IMGROUPSHIELDREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1162,
-  serialized_end=1259,
+  serialized_start=1100,
+  serialized_end=1197,
 )
 
 
@@ -553,8 +553,8 @@ _IMGROUPSHIELDRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1261,
-  serialized_end=1356,
+  serialized_start=1199,
+  serialized_end=1294,
 )
 
 
@@ -574,8 +574,8 @@ _IMGROUPCHANGEMEMBERNOTIFY = _descriptor.Descriptor(
       options=None),
     _descriptor.FieldDescriptor(
       name='change_type', full_name='IM.Group.IMGroupChangeMemberNotify.change_type', index=1,
-      number=2, type=14, cpp_type=8, label=2,
-      has_default_value=False, default_value=1,
+      number=2, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -611,17 +611,291 @@ _IMGROUPCHANGEMEMBERNOTIFY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1359,
-  serialized_end=1526,
+  serialized_start=1297,
+  serialized_end=1432,
+)
+
+
+_IMGROUPREMOVEGROUPREQUEST = _descriptor.Descriptor(
+  name='IMGroupRemoveGroupRequest',
+  full_name='IM.Group.IMGroupRemoveGroupRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='IM.Group.IMGroupRemoveGroupRequest.user_id', index=0,
+      number=1, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='group_id', full_name='IM.Group.IMGroupRemoveGroupRequest.group_id', index=1,
+      number=2, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attach_data', full_name='IM.Group.IMGroupRemoveGroupRequest.attach_data', index=2,
+      number=20, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1434,
+  serialized_end=1517,
+)
+
+
+_IMGROUPREMOVEGROUPRESP = _descriptor.Descriptor(
+  name='IMGroupRemoveGroupResp',
+  full_name='IM.Group.IMGroupRemoveGroupResp',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='IM.Group.IMGroupRemoveGroupResp.user_id', index=0,
+      number=1, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='group_id', full_name='IM.Group.IMGroupRemoveGroupResp.group_id', index=1,
+      number=2, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='result_code', full_name='IM.Group.IMGroupRemoveGroupResp.result_code', index=2,
+      number=3, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='user_id_list', full_name='IM.Group.IMGroupRemoveGroupResp.user_id_list', index=3,
+      number=4, type=13, cpp_type=3, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attach_data', full_name='IM.Group.IMGroupRemoveGroupResp.attach_data', index=4,
+      number=20, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1519,
+  serialized_end=1642,
+)
+
+
+_IMGROUPUPDATEINFOREQ = _descriptor.Descriptor(
+  name='IMGroupUpdateInfoReq',
+  full_name='IM.Group.IMGroupUpdateInfoReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='IM.Group.IMGroupUpdateInfoReq.user_id', index=0,
+      number=1, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='IM.Group.IMGroupUpdateInfoReq.type', index=1,
+      number=2, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='group_id', full_name='IM.Group.IMGroupUpdateInfoReq.group_id', index=2,
+      number=3, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='update_data', full_name='IM.Group.IMGroupUpdateInfoReq.update_data', index=3,
+      number=4, type=12, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attach_data', full_name='IM.Group.IMGroupUpdateInfoReq.attach_data', index=4,
+      number=20, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1644,
+  serialized_end=1757,
+)
+
+
+_IMGROUPUPDATEINFORESP = _descriptor.Descriptor(
+  name='IMGroupUpdateInfoResp',
+  full_name='IM.Group.IMGroupUpdateInfoResp',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='IM.Group.IMGroupUpdateInfoResp.user_id', index=0,
+      number=1, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='IM.Group.IMGroupUpdateInfoResp.type', index=1,
+      number=2, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='result_code', full_name='IM.Group.IMGroupUpdateInfoResp.result_code', index=2,
+      number=3, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='group_info', full_name='IM.Group.IMGroupUpdateInfoResp.group_info', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attach_data', full_name='IM.Group.IMGroupUpdateInfoResp.attach_data', index=4,
+      number=20, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1760,
+  serialized_end=1902,
+)
+
+
+_IMGROUPEVENTNOTIFY = _descriptor.Descriptor(
+  name='IMGroupEventNotify',
+  full_name='IM.Group.IMGroupEventNotify',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='IM.Group.IMGroupEventNotify.user_id', index=0,
+      number=1, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='IM.Group.IMGroupEventNotify.type', index=1,
+      number=2, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='group_id', full_name='IM.Group.IMGroupEventNotify.group_id', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='user_id_list', full_name='IM.Group.IMGroupEventNotify.user_id_list', index=3,
+      number=4, type=13, cpp_type=3, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='event_data', full_name='IM.Group.IMGroupEventNotify.event_data', index=4,
+      number=5, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1904,
+  serialized_end=2015,
 )
 
 _IMNORMALGROUPLISTRSP.fields_by_name['group_version_list'].message_type = IM.BaseDefine_pb2._GROUPVERSIONINFO
 _IMGROUPINFOLISTREQ.fields_by_name['group_version_list'].message_type = IM.BaseDefine_pb2._GROUPVERSIONINFO
 _IMGROUPINFOLISTRSP.fields_by_name['group_info_list'].message_type = IM.BaseDefine_pb2._GROUPINFO
 _IMGROUPCREATEREQ.fields_by_name['group_type'].enum_type = IM.BaseDefine_pb2._GROUPTYPE
-_IMGROUPCHANGEMEMBERREQ.fields_by_name['change_type'].enum_type = IM.BaseDefine_pb2._GROUPMODIFYTYPE
-_IMGROUPCHANGEMEMBERRSP.fields_by_name['change_type'].enum_type = IM.BaseDefine_pb2._GROUPMODIFYTYPE
-_IMGROUPCHANGEMEMBERNOTIFY.fields_by_name['change_type'].enum_type = IM.BaseDefine_pb2._GROUPMODIFYTYPE
+_IMGROUPUPDATEINFORESP.fields_by_name['group_info'].message_type = IM.BaseDefine_pb2._GROUPINFO
 DESCRIPTOR.message_types_by_name['IMNormalGroupListReq'] = _IMNORMALGROUPLISTREQ
 DESCRIPTOR.message_types_by_name['IMNormalGroupListRsp'] = _IMNORMALGROUPLISTRSP
 DESCRIPTOR.message_types_by_name['IMGroupInfoListReq'] = _IMGROUPINFOLISTREQ
@@ -633,6 +907,11 @@ DESCRIPTOR.message_types_by_name['IMGroupChangeMemberRsp'] = _IMGROUPCHANGEMEMBE
 DESCRIPTOR.message_types_by_name['IMGroupShieldReq'] = _IMGROUPSHIELDREQ
 DESCRIPTOR.message_types_by_name['IMGroupShieldRsp'] = _IMGROUPSHIELDRSP
 DESCRIPTOR.message_types_by_name['IMGroupChangeMemberNotify'] = _IMGROUPCHANGEMEMBERNOTIFY
+DESCRIPTOR.message_types_by_name['IMGroupRemoveGroupRequest'] = _IMGROUPREMOVEGROUPREQUEST
+DESCRIPTOR.message_types_by_name['IMGroupRemoveGroupResp'] = _IMGROUPREMOVEGROUPRESP
+DESCRIPTOR.message_types_by_name['IMGroupUpdateInfoReq'] = _IMGROUPUPDATEINFOREQ
+DESCRIPTOR.message_types_by_name['IMGroupUpdateInfoResp'] = _IMGROUPUPDATEINFORESP
+DESCRIPTOR.message_types_by_name['IMGroupEventNotify'] = _IMGROUPEVENTNOTIFY
 
 IMNormalGroupListReq = _reflection.GeneratedProtocolMessageType('IMNormalGroupListReq', (_message.Message,), dict(
   DESCRIPTOR = _IMNORMALGROUPLISTREQ,
@@ -710,6 +989,41 @@ IMGroupChangeMemberNotify = _reflection.GeneratedProtocolMessageType('IMGroupCha
   # @@protoc_insertion_point(class_scope:IM.Group.IMGroupChangeMemberNotify)
   ))
 _sym_db.RegisterMessage(IMGroupChangeMemberNotify)
+
+IMGroupRemoveGroupRequest = _reflection.GeneratedProtocolMessageType('IMGroupRemoveGroupRequest', (_message.Message,), dict(
+  DESCRIPTOR = _IMGROUPREMOVEGROUPREQUEST,
+  __module__ = 'IM.Group_pb2'
+  # @@protoc_insertion_point(class_scope:IM.Group.IMGroupRemoveGroupRequest)
+  ))
+_sym_db.RegisterMessage(IMGroupRemoveGroupRequest)
+
+IMGroupRemoveGroupResp = _reflection.GeneratedProtocolMessageType('IMGroupRemoveGroupResp', (_message.Message,), dict(
+  DESCRIPTOR = _IMGROUPREMOVEGROUPRESP,
+  __module__ = 'IM.Group_pb2'
+  # @@protoc_insertion_point(class_scope:IM.Group.IMGroupRemoveGroupResp)
+  ))
+_sym_db.RegisterMessage(IMGroupRemoveGroupResp)
+
+IMGroupUpdateInfoReq = _reflection.GeneratedProtocolMessageType('IMGroupUpdateInfoReq', (_message.Message,), dict(
+  DESCRIPTOR = _IMGROUPUPDATEINFOREQ,
+  __module__ = 'IM.Group_pb2'
+  # @@protoc_insertion_point(class_scope:IM.Group.IMGroupUpdateInfoReq)
+  ))
+_sym_db.RegisterMessage(IMGroupUpdateInfoReq)
+
+IMGroupUpdateInfoResp = _reflection.GeneratedProtocolMessageType('IMGroupUpdateInfoResp', (_message.Message,), dict(
+  DESCRIPTOR = _IMGROUPUPDATEINFORESP,
+  __module__ = 'IM.Group_pb2'
+  # @@protoc_insertion_point(class_scope:IM.Group.IMGroupUpdateInfoResp)
+  ))
+_sym_db.RegisterMessage(IMGroupUpdateInfoResp)
+
+IMGroupEventNotify = _reflection.GeneratedProtocolMessageType('IMGroupEventNotify', (_message.Message,), dict(
+  DESCRIPTOR = _IMGROUPEVENTNOTIFY,
+  __module__ = 'IM.Group_pb2'
+  # @@protoc_insertion_point(class_scope:IM.Group.IMGroupEventNotify)
+  ))
+_sym_db.RegisterMessage(IMGroupEventNotify)
 
 
 DESCRIPTOR.has_options = True

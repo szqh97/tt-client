@@ -19,7 +19,7 @@ import IM.BaseDefine_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='IM.Message.proto',
   package='IM.Message',
-  serialized_pb=_b('\n\x10IM.Message.proto\x12\nIM.Message\x1a\x13IM.BaseDefine.proto\"\xae\x01\n\tIMMsgData\x12\x14\n\x0c\x66rom_user_id\x18\x01 \x02(\r\x12\x15\n\rto_session_id\x18\x02 \x02(\r\x12\x0e\n\x06msg_id\x18\x03 \x02(\r\x12\x13\n\x0b\x63reate_time\x18\x04 \x02(\r\x12(\n\x08msg_type\x18\x05 \x02(\x0e\x32\x16.IM.BaseDefine.MsgType\x12\x10\n\x08msg_data\x18\x06 \x02(\x0c\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"u\n\x0cIMMsgDataAck\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x12\n\nsession_id\x18\x02 \x02(\r\x12\x0e\n\x06msg_id\x18\x03 \x02(\r\x12\x30\n\x0csession_type\x18\x04 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\"y\n\x10IMMsgDataReadAck\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x12\n\nsession_id\x18\x02 \x02(\r\x12\x0e\n\x06msg_id\x18\x03 \x02(\r\x12\x30\n\x0csession_type\x18\x04 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\"|\n\x13IMMsgDataReadNotify\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x12\n\nsession_id\x18\x02 \x02(\r\x12\x0e\n\x06msg_id\x18\x03 \x02(\r\x12\x30\n\x0csession_type\x18\x04 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\"\x11\n\x0fIMClientTimeReq\"&\n\x0fIMClientTimeRsp\x12\x13\n\x0bserver_time\x18\x01 \x02(\r\"9\n\x11IMUnreadMsgCntReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x80\x01\n\x11IMUnreadMsgCntRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\ttotal_cnt\x18\x02 \x02(\r\x12\x32\n\x0funreadinfo_list\x18\x03 \x03(\x0b\x32\x19.IM.BaseDefine.UnreadInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\xa4\x01\n\x0fIMGetMsgListReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x30\n\x0csession_type\x18\x02 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\x12\x12\n\nsession_id\x18\x03 \x02(\r\x12\x14\n\x0cmsg_id_begin\x18\x04 \x02(\r\x12\x0f\n\x07msg_cnt\x18\x05 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\xbd\x01\n\x0fIMGetMsgListRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x30\n\x0csession_type\x18\x02 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\x12\x12\n\nsession_id\x18\x03 \x02(\r\x12\x14\n\x0cmsg_id_begin\x18\x04 \x02(\r\x12(\n\x08msg_list\x18\x05 \x03(\x0b\x32\x16.IM.BaseDefine.MsgInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x81\x01\n\x13IMGetLatestMsgIdReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x30\n\x0csession_type\x18\x02 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\x12\x12\n\nsession_id\x18\x03 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x98\x01\n\x13IMGetLatestMsgIdRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x30\n\x0csession_type\x18\x02 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\x12\x12\n\nsession_id\x18\x03 \x02(\r\x12\x15\n\rlatest_msg_id\x18\x04 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x92\x01\n\x0fIMGetMsgByIdReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x30\n\x0csession_type\x18\x02 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\x12\x12\n\nsession_id\x18\x03 \x02(\r\x12\x13\n\x0bmsg_id_list\x18\x04 \x03(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\xa7\x01\n\x0fIMGetMsgByIdRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x30\n\x0csession_type\x18\x02 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\x12\x12\n\nsession_id\x18\x03 \x02(\r\x12(\n\x08msg_list\x18\x04 \x03(\x0b\x32\x16.IM.BaseDefine.MsgInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\x42\x1b\n\x17\x63om.mogujie.tt.protobufH\x03')
+  serialized_pb=_b('\n\x10IM.Message.proto\x12\nIM.Message\x1a\x13IM.BaseDefine.proto\"\xae\x01\n\tIMMsgData\x12\x14\n\x0c\x66rom_user_id\x18\x01 \x02(\r\x12\x15\n\rto_session_id\x18\x02 \x02(\r\x12\x0e\n\x06msg_id\x18\x03 \x02(\r\x12\x13\n\x0b\x63reate_time\x18\x04 \x02(\r\x12(\n\x08msg_type\x18\x05 \x02(\x0e\x32\x16.IM.BaseDefine.MsgType\x12\x10\n\x08msg_data\x18\x06 \x02(\x0c\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"u\n\x0cIMMsgDataAck\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x12\n\nsession_id\x18\x02 \x02(\r\x12\x0e\n\x06msg_id\x18\x03 \x02(\r\x12\x30\n\x0csession_type\x18\x04 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\"y\n\x10IMMsgDataReadAck\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x12\n\nsession_id\x18\x02 \x02(\r\x12\x0e\n\x06msg_id\x18\x03 \x02(\r\x12\x30\n\x0csession_type\x18\x04 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\"|\n\x13IMMsgDataReadNotify\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x12\n\nsession_id\x18\x02 \x02(\r\x12\x0e\n\x06msg_id\x18\x03 \x02(\r\x12\x30\n\x0csession_type\x18\x04 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\"\x11\n\x0fIMClientTimeReq\"&\n\x0fIMClientTimeRsp\x12\x13\n\x0bserver_time\x18\x01 \x02(\r\"9\n\x11IMUnreadMsgCntReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x80\x01\n\x11IMUnreadMsgCntRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x11\n\ttotal_cnt\x18\x02 \x02(\r\x12\x32\n\x0funreadinfo_list\x18\x03 \x03(\x0b\x32\x19.IM.BaseDefine.UnreadInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\xa4\x01\n\x0fIMGetMsgListReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x30\n\x0csession_type\x18\x02 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\x12\x12\n\nsession_id\x18\x03 \x02(\r\x12\x14\n\x0cmsg_id_begin\x18\x04 \x02(\r\x12\x0f\n\x07msg_cnt\x18\x05 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\xd7\x01\n\x0fIMGetMsgListRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x30\n\x0csession_type\x18\x02 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\x12\x12\n\nsession_id\x18\x03 \x02(\r\x12\x14\n\x0cmsg_id_begin\x18\x04 \x02(\r\x12(\n\x08msg_list\x18\x05 \x03(\x0b\x32\x16.IM.BaseDefine.MsgInfo\x12\x18\n\x10last_read_msg_id\x18\x06 \x01(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x81\x01\n\x13IMGetLatestMsgIdReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x30\n\x0csession_type\x18\x02 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\x12\x12\n\nsession_id\x18\x03 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x98\x01\n\x13IMGetLatestMsgIdRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x30\n\x0csession_type\x18\x02 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\x12\x12\n\nsession_id\x18\x03 \x02(\r\x12\x15\n\rlatest_msg_id\x18\x04 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x92\x01\n\x0fIMGetMsgByIdReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x30\n\x0csession_type\x18\x02 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\x12\x12\n\nsession_id\x18\x03 \x02(\r\x12\x13\n\x0bmsg_id_list\x18\x04 \x03(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\xa7\x01\n\x0fIMGetMsgByIdRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x30\n\x0csession_type\x18\x02 \x02(\x0e\x32\x1a.IM.BaseDefine.SessionType\x12\x12\n\nsession_id\x18\x03 \x02(\r\x12(\n\x08msg_list\x18\x04 \x03(\x0b\x32\x16.IM.BaseDefine.MsgInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"l\n\x13IMGetLostMsgListReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12/\n\x0cmsg_ack_list\x18\x02 \x03(\x0b\x32\x19.IM.BaseDefine.MsgAckType\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"e\n\x13IMGetLostMsgListRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12(\n\x08msg_list\x18\x02 \x03(\x0b\x32\x16.IM.BaseDefine.MsgInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\x42\x1b\n\x17\x63om.mogujie.tt.protobufH\x03')
   ,
   dependencies=[IM.BaseDefine_pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -501,7 +501,14 @@ _IMGETMSGLISTRSP = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='attach_data', full_name='IM.Message.IMGetMsgListRsp.attach_data', index=5,
+      name='last_read_msg_id', full_name='IM.Message.IMGetMsgListRsp.last_read_msg_id', index=5,
+      number=6, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attach_data', full_name='IM.Message.IMGetMsgListRsp.attach_data', index=6,
       number=20, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -519,7 +526,7 @@ _IMGETMSGLISTRSP = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1015,
-  serialized_end=1204,
+  serialized_end=1230,
 )
 
 
@@ -569,8 +576,8 @@ _IMGETLATESTMSGIDREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1207,
-  serialized_end=1336,
+  serialized_start=1233,
+  serialized_end=1362,
 )
 
 
@@ -627,8 +634,8 @@ _IMGETLATESTMSGIDRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1339,
-  serialized_end=1491,
+  serialized_start=1365,
+  serialized_end=1517,
 )
 
 
@@ -685,8 +692,8 @@ _IMGETMSGBYIDREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1494,
-  serialized_end=1640,
+  serialized_start=1520,
+  serialized_end=1666,
 )
 
 
@@ -743,8 +750,96 @@ _IMGETMSGBYIDRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1643,
-  serialized_end=1810,
+  serialized_start=1669,
+  serialized_end=1836,
+)
+
+
+_IMGETLOSTMSGLISTREQ = _descriptor.Descriptor(
+  name='IMGetLostMsgListReq',
+  full_name='IM.Message.IMGetLostMsgListReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='IM.Message.IMGetLostMsgListReq.user_id', index=0,
+      number=1, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='msg_ack_list', full_name='IM.Message.IMGetLostMsgListReq.msg_ack_list', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attach_data', full_name='IM.Message.IMGetLostMsgListReq.attach_data', index=2,
+      number=20, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1838,
+  serialized_end=1946,
+)
+
+
+_IMGETLOSTMSGLISTRSP = _descriptor.Descriptor(
+  name='IMGetLostMsgListRsp',
+  full_name='IM.Message.IMGetLostMsgListRsp',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='IM.Message.IMGetLostMsgListRsp.user_id', index=0,
+      number=1, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='msg_list', full_name='IM.Message.IMGetLostMsgListRsp.msg_list', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attach_data', full_name='IM.Message.IMGetLostMsgListRsp.attach_data', index=2,
+      number=20, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1948,
+  serialized_end=2049,
 )
 
 _IMMSGDATA.fields_by_name['msg_type'].enum_type = IM.BaseDefine_pb2._MSGTYPE
@@ -760,6 +855,8 @@ _IMGETLATESTMSGIDRSP.fields_by_name['session_type'].enum_type = IM.BaseDefine_pb
 _IMGETMSGBYIDREQ.fields_by_name['session_type'].enum_type = IM.BaseDefine_pb2._SESSIONTYPE
 _IMGETMSGBYIDRSP.fields_by_name['session_type'].enum_type = IM.BaseDefine_pb2._SESSIONTYPE
 _IMGETMSGBYIDRSP.fields_by_name['msg_list'].message_type = IM.BaseDefine_pb2._MSGINFO
+_IMGETLOSTMSGLISTREQ.fields_by_name['msg_ack_list'].message_type = IM.BaseDefine_pb2._MSGACKTYPE
+_IMGETLOSTMSGLISTRSP.fields_by_name['msg_list'].message_type = IM.BaseDefine_pb2._MSGINFO
 DESCRIPTOR.message_types_by_name['IMMsgData'] = _IMMSGDATA
 DESCRIPTOR.message_types_by_name['IMMsgDataAck'] = _IMMSGDATAACK
 DESCRIPTOR.message_types_by_name['IMMsgDataReadAck'] = _IMMSGDATAREADACK
@@ -774,6 +871,8 @@ DESCRIPTOR.message_types_by_name['IMGetLatestMsgIdReq'] = _IMGETLATESTMSGIDREQ
 DESCRIPTOR.message_types_by_name['IMGetLatestMsgIdRsp'] = _IMGETLATESTMSGIDRSP
 DESCRIPTOR.message_types_by_name['IMGetMsgByIdReq'] = _IMGETMSGBYIDREQ
 DESCRIPTOR.message_types_by_name['IMGetMsgByIdRsp'] = _IMGETMSGBYIDRSP
+DESCRIPTOR.message_types_by_name['IMGetLostMsgListReq'] = _IMGETLOSTMSGLISTREQ
+DESCRIPTOR.message_types_by_name['IMGetLostMsgListRsp'] = _IMGETLOSTMSGLISTRSP
 
 IMMsgData = _reflection.GeneratedProtocolMessageType('IMMsgData', (_message.Message,), dict(
   DESCRIPTOR = _IMMSGDATA,
@@ -872,6 +971,20 @@ IMGetMsgByIdRsp = _reflection.GeneratedProtocolMessageType('IMGetMsgByIdRsp', (_
   # @@protoc_insertion_point(class_scope:IM.Message.IMGetMsgByIdRsp)
   ))
 _sym_db.RegisterMessage(IMGetMsgByIdRsp)
+
+IMGetLostMsgListReq = _reflection.GeneratedProtocolMessageType('IMGetLostMsgListReq', (_message.Message,), dict(
+  DESCRIPTOR = _IMGETLOSTMSGLISTREQ,
+  __module__ = 'IM.Message_pb2'
+  # @@protoc_insertion_point(class_scope:IM.Message.IMGetLostMsgListReq)
+  ))
+_sym_db.RegisterMessage(IMGetLostMsgListReq)
+
+IMGetLostMsgListRsp = _reflection.GeneratedProtocolMessageType('IMGetLostMsgListRsp', (_message.Message,), dict(
+  DESCRIPTOR = _IMGETLOSTMSGLISTRSP,
+  __module__ = 'IM.Message_pb2'
+  # @@protoc_insertion_point(class_scope:IM.Message.IMGetLostMsgListRsp)
+  ))
+_sym_db.RegisterMessage(IMGetLostMsgListRsp)
 
 
 DESCRIPTOR.has_options = True

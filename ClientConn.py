@@ -17,6 +17,7 @@ from IM.Buddy_pb2 import *
 from IM.Message_pb2 import *
 from IM.Group_pb2 import *
 import ClientConnReq 
+import ClientConnResp
 from tornado.ioloop import IOLoop
 from config import cnt, MIN_TO_ID, MAX_TO_ID, MIN_FROM_ID, MAX_FROM_ID
 
@@ -120,6 +121,7 @@ class ClientConn(object):
             log.info('=========> buffer is : [{}]'.format(self._buffer))
             log.info(traceback.format_exc())
         self._buffer = ''
+
         if pdu.command_id == CID_LOGIN_RES_USERLOGIN:
             self.handleLoginResponse(pdu)
         elif pdu.command_id == CID_BUDDY_LIST_RECENT_CONTACT_SESSION_RESPONSE:
@@ -139,7 +141,13 @@ class ClientConn(object):
         elif pdu.command_id == CID_MSG_READ_NOTIFY:
             self.handleReadNotify(pdu)
         elif pdu.command_id == CID_GROUP_CREATE_RESPONSE:
-            self.handleCreateGroupResponse(pdu)
+            ClientConnResp._createGroupResponse(pdu)
+        elif pdu.command_id == CID_GROUP_REMOVE_GROUP_RESPONSE:
+            ClientConnResp._disbandGroupResponse(pdu)
+        elif pdu.command_id == CID_GROUP_GROUPEVENT_NOTIFY:
+            ClientConnResp._groupEventNotify(pdu)
+        elif pdu.command_id == CID_GROUP_CHANGE_MEMBER_RESPONSE:
+            ClientConnResp._groupchangemember(pdu)
         else:
             log.info('Invalid command_id: {}'.format(pdu.command_id))
     
@@ -198,6 +206,17 @@ class ClientConn(object):
         elif self._m_user_id >= MIN_TO_ID and self._m_user_id < MAX_TO_ID:
             pass
 
+    def sendMsg2(self ):
+        """
+        send msg to user which user_id = self._m_user_id + 5000
+        send 20 msg per second
+
+        """
+        encrypted_msg = 'dgjzZcuwYVvgiMtBlzoa8RS7edxfMniMPR2naJakzDo6jfQKGGbzEee6ENKT4qW8o95BhdaLX1yonQuqKImGAJv9fdeyZEvjlfzrT5S4g3I='
+        pdu_msg = ClientConnReq._MsgData(2396,12798, encrypted_msg , 6)
+        log.inf("sss")
+        self._socket.send(pdu_msg)
+
     def handleUnreadCnt(self, pdu):
         resp = IMUnreadMsgCntRsp.FromString(pdu.msg)
         total_cnt= resp.total_cnt
@@ -224,10 +243,6 @@ class ClientConn(object):
         else:
             log.error('login failed: {}, {}'.format(ret, retMsg.encode('utf-8')))
 
-        pass
-
-    def handleCreateGroupResponse(self, pdu):
-        log.info("in handleCreateGroupResponse..")
         pass
 
     def hanledUserInfo(self, pdu):
@@ -270,9 +285,21 @@ class ClientConn(object):
         log.info("in createGroupReq")
         self._socket.send(pdu_msg)
 
+    def disbandGroup(self):
+        user_id = 2396
+        group_id = 17
+        pdu_msg = ClientConnReq._DisbandGroupReq(user_id, group_id)
+        self._socket.send(pdu_msg)
+        pass
+
+    def changeGroupMember(self, user_id, group_id, user_id_list, ctype):
+        pdu_msg = ClientConnReq._ChangeGroupMembmber(user_id, group_id, user_id_list, ctype)
+        self._socket.send(pdu_msg)
+
         
 #### FOR TEST ONLY ####
 #c = ClientConn("dj352801")
 #c.connect()
 #c.login()
+#c.sendMsg2()
 

@@ -39,7 +39,9 @@ class ClientServer(object):
     def registerClientConns(self):
         for conn in self._fd_map.values():
             conn.login()
-            conn.createGroup()
+            #conn.createGroup()
+            time.sleep(4)
+            conn.changeGroupMember(2396, 18, [10], 1)
 
         for fd in self._fd_map.keys():
             c = self._fd_map[fd]
@@ -55,7 +57,8 @@ class ClientServer(object):
             del self._fd_map[fd]
         conn = self._fd_map.get(fd, None)
         if conn is None:
-            log.info("conn is closed or disconnected, user_id: {}".format(conn._username))
+            log.info("conn is closed or disconnected, ")
+            sys.exit(1)
             pass
         else:
             if conn._connected  :
