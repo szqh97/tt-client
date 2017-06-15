@@ -38,5 +38,13 @@ def _groupchangemember(pdu):
     msg = Group_pb2.IMGroupChangeMemberRsp.FromString(pdu.msg)
     log.info("in change group member response, user_id: %d, change_type: %d, result_code: %d", msg.user_id, msg.change_type, msg.result_code)
 
+def _updateGroupInfoResponse(pdu):
+    msg = Group_pb2.IMGroupUpdateInfoResp.FromString(pdu.msg)
+    log.info("in update group info response, user_id = %d, change_type: %d, group_id:%d, result_code: %d",
+            msg.user_id, msg.type, msg.group_id, msg.result_code)
 
+
+def _getNormalGroupList(pdu):
+    msg = Group_pb2.IMNormalGroupListRsp.FromString(pdu.msg)
+    log.info("in get normal grouplist, user_id: {}, group size:{}".format(msg.user_id, msg.group_id_list))
 

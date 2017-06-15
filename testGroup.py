@@ -41,7 +41,10 @@ class ClientServer(object):
             conn.login()
             #conn.createGroup()
             time.sleep(4)
-            conn.changeGroupMember(2396, 18, [10], 1)
+            #conn.changeGroupMember(2396, 18, [10], 1)
+            #conn.removeGroup(2396, 18)
+            #conn.updateGroupInfo(2396, 103, 20, "rtest-2")
+            conn.getNormalGroupList(2396)
 
         for fd in self._fd_map.keys():
             c = self._fd_map[fd]

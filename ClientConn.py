@@ -148,6 +148,10 @@ class ClientConn(object):
             ClientConnResp._groupEventNotify(pdu)
         elif pdu.command_id == CID_GROUP_CHANGE_MEMBER_RESPONSE:
             ClientConnResp._groupchangemember(pdu)
+        elif pdu.command_id == CID_GROUP_UPDATE_GROUP_RESPONSE:
+            ClientConnResp._updateGroupInfoResponse(pdu)
+        elif pdu.command_id == CID_GROUP_NORMAL_LIST_RESPONSE:
+            ClientConnResp._getNormalGroupList(pdu)
         else:
             log.info('Invalid command_id: {}'.format(pdu.command_id))
     
@@ -285,15 +289,21 @@ class ClientConn(object):
         log.info("in createGroupReq")
         self._socket.send(pdu_msg)
 
-    def disbandGroup(self):
-        user_id = 2396
-        group_id = 17
+    def removeGroup(self, user_id, group_id):
         pdu_msg = ClientConnReq._DisbandGroupReq(user_id, group_id)
         self._socket.send(pdu_msg)
         pass
 
     def changeGroupMember(self, user_id, group_id, user_id_list, ctype):
         pdu_msg = ClientConnReq._ChangeGroupMembmber(user_id, group_id, user_id_list, ctype)
+        self._socket.send(pdu_msg)
+
+    def updateGroupInfo(self, user_id, etype, group_id, update_data):
+        pdu_msg = ClientConnReq._UpdateGroupInfo(user_id, etype, group_id, update_data)
+        self._socket.send(pdu_msg)
+
+    def getNormalGroupList(self, user_id):
+        pdu_msg = ClientConnReq._getGroupList(user_id)
         self._socket.send(pdu_msg)
 
         

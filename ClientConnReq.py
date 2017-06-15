@@ -183,4 +183,27 @@ def _ChangeGroupMembmber(user_id, group_id,  add_user_list, ctype = 1):
     pdu.setCommandId(BaseDefine_pb2.CID_GROUP_CHANGE_MEMBER_REQUEST)
     return pdu.SerializeToString()
 
+def _UpdateGroupInfo(user_id, etype, group_id, update_data):
+    log.info("user_id: %d update group: %d, type: %d, data: %s", user_id, etype, group_id, update_data)
+    req = Group_pb2.IMGroupUpdateInfoReq()
+    req.Clear()
+    req.user_id = user_id
+    req.type = etype
+    req.group_id = group_id
+    req.update_data = update_data
+    pdu = ImPdu.ImPdu()
+    pdu.setMsg(req.SerializeToString())
+    pdu.setServiceId(BaseDefine_pb2.SID_GROUP)
+    pdu.setCommandId(BaseDefine_pb2.CID_GROUP_UPDATE_GROUP_REQUEST)
+    return pdu.SerializeToString()
 
+def _getGroupList(user_id):
+    log.info("user: %d, requsest grouplist")
+    req = Group_pb2.IMNormalGroupListReq()
+    req.Clear()
+    req.user_id = user_id
+    pdu = ImPdu.ImPdu()
+    pdu.setMsg(req.SerializeToString())
+    pdu.setServiceId(BaseDefine_pb2.SID_GROUP)
+    pdu.setCommandId(BaseDefine_pb2.CID_GROUP_NORMAL_LIST_REQUEST)
+    return pdu.SerializeToString()
