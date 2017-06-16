@@ -152,6 +152,8 @@ class ClientConn(object):
             ClientConnResp._updateGroupInfoResponse(pdu)
         elif pdu.command_id == CID_GROUP_NORMAL_LIST_RESPONSE:
             ClientConnResp._getNormalGroupList(pdu)
+        elif pdu.command_id == CID_GROUP_INFO_RESPONSE:
+            ClientConnResp._GroupInfoListResponse(pdu)
         else:
             log.info('Invalid command_id: {}'.format(pdu.command_id))
     
@@ -304,6 +306,10 @@ class ClientConn(object):
 
     def getNormalGroupList(self, user_id):
         pdu_msg = ClientConnReq._getGroupList(user_id)
+        self._socket.send(pdu_msg)
+
+    def getGroupInfoList(self, user_id, group_id_list):
+        pdu_msg = ClientConnReq._getGroupInfoList(user_id, group_id_list)
         self._socket.send(pdu_msg)
 
         

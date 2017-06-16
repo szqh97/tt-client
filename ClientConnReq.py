@@ -207,3 +207,15 @@ def _getGroupList(user_id):
     pdu.setServiceId(BaseDefine_pb2.SID_GROUP)
     pdu.setCommandId(BaseDefine_pb2.CID_GROUP_NORMAL_LIST_REQUEST)
     return pdu.SerializeToString()
+
+def _getGroupInfoList(user_id, group_id_list):
+    log.info("user_id: {}, group_id_list: {}".format(user_id, group_id_list))
+    req = Group_pb2.IMGroupInfoListReq()
+    req.Clear()
+    req.user_id = user_id
+    req.group_id_list.extend(group_id_list)
+    pdu = ImPdu.ImPdu()
+    pdu.setMsg(req.SerializeToString())
+    pdu.setServiceId(BaseDefine_pb2.SID_GROUP)
+    pdu.setCommandId(BaseDefine_pb2.CID_GROUP_INFO_REQUEST)
+    return pdu.SerializeToString()

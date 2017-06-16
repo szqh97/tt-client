@@ -48,3 +48,8 @@ def _getNormalGroupList(pdu):
     msg = Group_pb2.IMNormalGroupListRsp.FromString(pdu.msg)
     log.info("in get normal grouplist, user_id: {}, group size:{}".format(msg.user_id, msg.group_id_list))
 
+def _GroupInfoListResponse(pdu):
+    msg = Group_pb2.IMGroupInfoListRsp.FromString(pdu.msg)
+    log.info("in group info list , user_id: {}, group info list: {}".format(msg.user_id, [x.group_name for x in msg.group_info_list]))
+    print [x.announcement for x in msg.group_info_list]
+    print [len(x.group_member_list) for x in msg.group_info_list]
