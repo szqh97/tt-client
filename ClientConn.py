@@ -46,6 +46,7 @@ class ClientConn(object):
         self.password = h.hexdigest()
         self.ttserver = ttserver
         self._socket = None
+        self._unread_len = 0
         self._buffer = b''
         self._m_open = False
         self._connected = False
@@ -88,6 +89,40 @@ class ClientConn(object):
         self._socket.send(buf)
 
     def recvData(self):
+        try:
+            if self._unread_len == 0:
+                self._buffer = ''
+                pduheaderbuf = self._socket.recv(16)
+                if len(pduheaderbuf) != 16:
+                    log.error("read pdu len error, len{}".format(len(pduheaderbuf)))
+                    self._connected = False;
+                    self._socket.close()
+                    return;
+                self._buffer = pduheaderbuf
+                try:
+                    pdu = ImPdu()
+                    pdu.FromString(pduheaderbuf)
+                except Exception as e:
+                    log.error(traceback.format_exc())
+                    raise e
+                else:
+                    self._unread_len = pdu.length - 16
+                    buf = self._socket.recv(self._unread_len)
+                    self._unread_len -= len(buf)
+                    self._buffer += buf
+                    if self._unread_len == 0:
+                        self.handlePdu()
+            else:
+                buf = self._socket.recv(self._unread_len)
+                self._buffer += buf
+                self._unread_len -= len(buf)
+                if self._unread_len == 0:
+                    self.handlePdu()
+        except Exception as e:
+            log.error(traceback.format_exc())
+            raise e
+
+    def recvData2(self):
         pdu = ImPdu()
         try:
             pduheaderbuf = self._socket.recv(16)
@@ -106,6 +141,7 @@ class ClientConn(object):
                 log.error('unpack pdu length error: {}'.format(traceback.format_exc()))
             else:
                 buf = self._socket.recv(pdu.length - 16)
+                log.info("pdulen is :{}, buf len: {}".format(pdu.length - 16, len(buf)))
                 self._buffer = pduheaderbuf
                 self._buffer += buf
         self.handlePdu()
