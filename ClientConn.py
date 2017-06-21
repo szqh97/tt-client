@@ -162,10 +162,9 @@ class ClientConn(object):
         pass
 
     def handleRecentContactSessionResponse(self, pdu):
+        ClientConnResp._GetRecentSessionResponse(pdu)
         resp = IMRecentContactSessionRsp.FromString(pdu.msg)
-        log.info('in handleRecentContactSessionResponse , user: {},'
-                ' concatSessionList: {}'.format(self._m_user_id, len(resp.contact_session_list)))
-        pdu_msg = ClientConnReq._UnreadMsgCntReq(self._m_user_id)
+        pdu_msg = ClientConnReq._UnreadMsgCntReq(resp.user_id)
         self._socket.send(pdu_msg)
 
     def handleMsgData(self, pdu):
@@ -212,17 +211,6 @@ class ClientConn(object):
         elif self._m_user_id >= MIN_TO_ID and self._m_user_id < MAX_TO_ID:
             pass
 
-    def sendMsg2(self ):
-        """
-        send msg to user which user_id = self._m_user_id + 5000
-        send 20 msg per second
-
-        """
-        encrypted_msg = 'dgjzZcuwYVvgiMtBlzoa8RS7edxfMniMPR2naJakzDo6jfQKGGbzEee6ENKT4qW8o95BhdaLX1yonQuqKImGAJv9fdeyZEvjlfzrT5S4g3I='
-        pdu_msg = ClientConnReq._MsgData(2396,12798, encrypted_msg , 6)
-        log.inf("sss")
-        self._socket.send(pdu_msg)
-
     def handleUnreadCnt(self, pdu):
         resp = IMUnreadMsgCntRsp.FromString(pdu.msg)
         total_cnt= resp.total_cnt
@@ -248,8 +236,6 @@ class ClientConn(object):
             #self.sendData(pdu_msg)
         else:
             log.error('login failed: {}, {}'.format(ret, retMsg.encode('utf-8')))
-
-        pass
 
     def hanledUserInfo(self, pdu):
         pass
@@ -312,6 +298,15 @@ class ClientConn(object):
         pdu_msg = ClientConnReq._getGroupInfoList(user_id, group_id_list)
         self._socket.send(pdu_msg)
 
+    def sendMsg2(self, user_id, sessionId):
+        encrypted_msg = 'dgjzZcuwYVvgiMtBlzoa8RS7edxfMniMPR2naJakzDo6jfQKGGbzEee6ENKT4qW8o95BhdaLX1yonQuqKImGAJv9fdeyZEvjlfzrT5S4g3I='
+        pdu_msg = ClientConnReq._MsgData(user_id, sessionId, encrypted_msg, MSG_TYPE_GROUP_TEXT)
+        self._socket.send(pdu_msg)
+
+    def getRecentSession(self, user_id, last_time=0):
+        log.info("get recentsession , userid:{}, lastime: {}".format(user_id, last_time))
+        pdu_msg = ClientConnReq._RecentContactSessionReq(user_id, last_time)
+        self._socket.send(pdu_msg)
         
 #### FOR TEST ONLY ####
 #c = ClientConn("dj352801")

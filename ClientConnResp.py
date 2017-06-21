@@ -53,3 +53,8 @@ def _GroupInfoListResponse(pdu):
     log.info("in group info list , user_id: {}, group info list: {}".format(msg.user_id, [x.group_name for x in msg.group_info_list]))
     print [x.announcement for x in msg.group_info_list]
     print [len(x.group_member_list) for x in msg.group_info_list]
+
+def _GetRecentSessionResponse(pdu):
+    resp = Buddy_pb2.IMRecentContactSessionRsp.FromString(pdu.msg)
+    contact_session_list = [{"session_id": s.session_id, "type": s.session_type} for s in resp.contact_session_list]
+    log.info("contact session list: {}".format(contact_session_list))

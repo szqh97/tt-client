@@ -7,7 +7,7 @@ log = logging
 def install_logger(name):
     global log
     log = logging.getLogger(name)
-    formatter = logging.Formatter('%(threadName)s %(asctime)s %(name)-15s %(levelname)-8s: %(message)s')
+    formatter = logging.Formatter('%(threadName)s %(asctime)s %(levelname)s %(name)s [%(funcName)s<%(lineno)d>]:%(message)s')
     file_handler = logging.FileHandler('./tt-client.log')
     file_handler.setFormatter(formatter)
     stream_handler = logging.StreamHandler(sys.stdout)

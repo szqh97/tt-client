@@ -14,6 +14,7 @@ log = install_logger("TestServer")
 class ClientServer(object):
     """
     ClientServer is a server managing ClientConn's sockets
+    
     """
     def __init__(self, username):
         self._fd_map = {}
@@ -40,12 +41,14 @@ class ClientServer(object):
         for conn in self._fd_map.values():
             conn.login()
             #conn.createGroup()
-            time.sleep(4)
+            time.sleep(2)
             #conn.changeGroupMember(2396, 18, [10], 1)
             #conn.removeGroup(2396, 18)
             #conn.updateGroupInfo(2396, 103, 20, "rtest-2")
             #conn.getNormalGroupList(2396)
-            conn.getGroupInfoList(2396, [20,19])
+            #conn.getGroupInfoList(2396, [20,19])
+            #conn.sendMsg2(5, 19)
+            conn.getRecentSession(12460, 0)
 
         for fd in self._fd_map.keys():
             c = self._fd_map[fd]
