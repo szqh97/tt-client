@@ -12,7 +12,7 @@ def install_logger(name):
     file_handler.setFormatter(formatter)
     stream_handler = logging.StreamHandler(sys.stdout)
     stream_handler.setFormatter(formatter)
-    log.addHandler(file_handler)
+    #log.addHandler(file_handler)
     log.addHandler(stream_handler)
     log.setLevel(logging.DEBUG)
     return log

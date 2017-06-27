@@ -219,3 +219,32 @@ def _getGroupInfoList(user_id, group_id_list):
     pdu.setServiceId(BaseDefine_pb2.SID_GROUP)
     pdu.setCommandId(BaseDefine_pb2.CID_GROUP_INFO_REQUEST)
     return pdu.SerializeToString()
+
+def _getLatestMsgId(user_id, session_type, session_id):
+    log.info("userId:{}, session_type:{}, session_id:{}".format(user_id, session_type, session_id))
+    req = Message_pb2.IMGetLatestMsgIdReq()
+    req.Clear()
+    req.user_id = user_id
+    req.session_type = session_type
+    req.session_id = session_id
+    pdu = ImPdu.ImPdu()
+    pdu.setMsg(req.SerializeToString())
+    pdu.setServiceId(BaseDefine_pb2.SID_MSG)
+    pdu.setCommandId(BaseDefine_pb2.CID_MSG_GET_LATEST_MSG_ID_REQ)
+    return pdu.SerializeToString()
+
+def _getMsgListReq(user_id, session_type, session_id, msg_id_begin, cnt):
+    log.info("userId:{}, sessiontype:{}, session_id:{}, msgid_begin:{}, cnt:{}".format( user_id, session_type, session_id, msg_id_begin, cnt))
+    req = Message_pb2.IMGetMsgListReq()
+    req.Clear()
+    req.user_id = user_id
+    req.session_type = session_type
+    req.session_id = session_id
+    req.msg_id_begin = msg_id_begin
+    req.msg_cnt = cnt
+    pdu = ImPdu.ImPdu()
+    pdu.setMsg(req.SerializeToString())
+    pdu.setServiceId(BaseDefine_pb2.SID_MSG)
+    pdu.setCommandId(BaseDefine_pb2.CID_MSG_LIST_REQUEST)
+    return pdu.SerializeToString()
+

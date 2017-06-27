@@ -40,20 +40,25 @@ class ClientServer(object):
     def registerClientConns(self):
         for conn in self._fd_map.values():
             conn.login()
-            #conn.createGroup()
+            
             time.sleep(2)
+            #conn.createGroup()
             #conn.changeGroupMember(2396, 18, [10], 1)
             #conn.removeGroup(2396, 18)
             #conn.updateGroupInfo(2396, 103, 20, "rtest-2")
             #conn.getNormalGroupList(2396)
             #conn.getGroupInfoList(2396, [20,19])
-            #conn.sendMsg2(5, 19)
-            conn.getRecentSession(12460, 0)
+            #conn.sendMsg2(12460, 19)
+            #conn.getRecentSession(12460, 0)
+            #conn.getUnreadMsgCount(2396)
+            #conn.getLatestMsgId(2396, 2, 19)
+            conn.getMsgListReq(2396, 2, 19, 30, 3)
 
         for fd in self._fd_map.keys():
             c = self._fd_map[fd]
             callback = functools.partial(self.client_handler, c._socket)
             self._io_loop.add_handler(fd, callback, IOLoop.READ)
+
         
 
     def client_handler(self, sock, fd, events):

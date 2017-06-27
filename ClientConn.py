@@ -14,6 +14,7 @@ from TTBase.ImPdu import *
 from IM.Login_pb2 import *
 from IM.BaseDefine_pb2 import *
 from IM.Buddy_pb2 import *
+from IM import BaseDefine_pb2
 from IM.Message_pb2 import *
 from IM.Group_pb2 import *
 import ClientConnReq 
@@ -170,8 +171,6 @@ class ClientConn(object):
             self.handleUnreadCnt(pdu)
         elif pdu.command_id == CID_MSG_DATA:
             self.handleMsgData(pdu)
-        elif pdu.command_id == CID_MSG_LIST_RESPONSE:
-            self.handleListResponse(pdu)
         elif pdu.command_id == CID_OTHER_HEARTBEAT:
             self.handleHeartBeat(pdu)
         elif pdu.command_id == CID_MSG_READ_NOTIFY:
@@ -190,6 +189,11 @@ class ClientConn(object):
             ClientConnResp._getNormalGroupList(pdu)
         elif pdu.command_id == CID_GROUP_INFO_RESPONSE:
             ClientConnResp._GroupInfoListResponse(pdu)
+        elif pdu.command_id == BaseDefine_pb2.CID_MSG_GET_LATEST_MSG_ID_RSP:
+            ClientConnResp._GetLatestMsgIdResp(pdu)
+        elif pdu.command_id == BaseDefine_pb2.CID_MSG_LIST_RESPONSE:
+            ClientConnResp._GetMsgListResp(pdu)
+
         else:
             log.info('Invalid command_id: {}'.format(pdu.command_id))
     
@@ -224,14 +228,6 @@ class ClientConn(object):
         #log.debug('in handleHeartBeat , fd: {}'.format(self._socket.fileno()))
         pass
     
-    def handleListResponse(self, pdu):
-        resp = IMLoginRes.FromString(pdu.msg)
-        if resp.result_code != 0:
-            log.error("login error: {}, {}".format(resp.result_code, resp.result_string.encode('utf-8')))
-        else:
-            self.m_open = True
-            self._userInfo = resp.user_info
-
     def sendMsg(self ):
         """
         send msg to user which user_id = self._m_user_id + 5000
@@ -248,12 +244,8 @@ class ClientConn(object):
             pass
 
     def handleUnreadCnt(self, pdu):
-        resp = IMUnreadMsgCntRsp.FromString(pdu.msg)
-        total_cnt= resp.total_cnt
-        log.debug('in handleUnreadCnt, user: {}, user_id: {},' 
-                'unread msg cnt: {}'.format(self.username, self._m_user_id, total_cnt))
-        self.sendMsg()
-        pass
+        ClientConnResp._GetUnreadMsgCountResp(pdu)
+
 
     def handleLoginResponse(self, pdu):
         seqNo = pdu.seq_num
@@ -265,11 +257,6 @@ class ClientConn(object):
             self._m_user_id = msgResp.user_info.user_id
             log.info('login successful: {}, {}'.format(ret, retMsg.encode('utf-8')))
             log.info('user id is : {}'.format(self._m_user_id))
-#           pdu_msg = ClientConnReq._RecentContactSessionReq(self._m_user_id)
-#           self._socket.send(pdu_msg)
-#           log.info('_RecentContactSessionReq: {}'.format(self._m_user_id))
-            #self.logout()
-            #self.sendData(pdu_msg)
         else:
             log.error('login failed: {}, {}'.format(ret, retMsg.encode('utf-8')))
 
@@ -343,6 +330,21 @@ class ClientConn(object):
         log.info("get recentsession , userid:{}, lastime: {}".format(user_id, last_time))
         pdu_msg = ClientConnReq._RecentContactSessionReq(user_id, last_time)
         self._socket.send(pdu_msg)
+
+    def getUnreadMsgCount(self, user_id):
+        log.info('user id :{}'.format(user_id))
+        pdu_msg = ClientConnReq._UnreadMsgCntReq(user_id)
+        self._socket.send(pdu_msg)
+
+    def getLatestMsgId(self, user_id, session_type, session_id ):
+        pdu_msg = ClientConnReq._getLatestMsgId(user_id, session_type, session_id)
+        self._socket.send(pdu_msg)
+
+
+    def getMsgListReq(self, user_id, session_type, session_id, msg_id_begin, cnt):
+        pdu_msg = ClientConnReq._getMsgListReq(user_id, session_type, session_id, msg_id_begin, cnt)
+        self._socket.send(pdu_msg)
+
         
 #### FOR TEST ONLY ####
 #c = ClientConn("dj352801")

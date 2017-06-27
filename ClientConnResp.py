@@ -16,7 +16,7 @@ from TTBase import ImPdu
 from TTSocketHandler import TTSocket
 
 from TTBase.util import install_logger
-log = install_logger('ClientConnReq')
+log = install_logger('ClientConnResp')
 
 def _loginResponse(pdu):
     resp = IMLoginRes.FromString(pdu.msg)
@@ -58,3 +58,19 @@ def _GetRecentSessionResponse(pdu):
     resp = Buddy_pb2.IMRecentContactSessionRsp.FromString(pdu.msg)
     contact_session_list = [{"session_id": s.session_id, "type": s.session_type} for s in resp.contact_session_list]
     log.info("contact session list: {}".format(contact_session_list))
+
+def _GetUnreadMsgCountResp(pdu):
+    resp = Message_pb2.IMUnreadMsgCntRsp.FromString(pdu.msg)
+    unreadinfolist = [{"session_id": s.session_id, "type":s.session_type, "cnt":s.unread_cnt, "lmsgid":s.latest_msg_id , "latest_from_id": s.latest_msg_from_user_id} for s in resp.unreadinfo_list]
+    log.info("count: {}, unread info list: {}".format(resp.total_cnt, unreadinfolist))
+
+def _GetLatestMsgIdResp(pdu):
+    resp = Message_pb2.IMGetLatestMsgIdRsp.FromString(pdu.msg)
+    log.info("latest msg id: {}".format(resp.latest_msg_id))
+
+def _GetMsgListResp(pdu):
+    resp = Message_pb2.IMGetMsgListRsp.FromString(pdu.msg)
+    msgList = [{"msg_id": x.msg_id, "msg_ts": x.create_time, "type": x.msg_type, "from": x.from_session_id, "data":x.msg_data} for x in resp.msg_list]
+    log.info(" last msgid : {}".format(resp.last_read_msg_id) )
+    print msgList
+
