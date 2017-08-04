@@ -12,6 +12,7 @@ from IM import Message_pb2
 from IM import Other_pb2
 from IM import Server_pb2
 from IM import SwitchService_pb2
+from IM import Control_pb2
 from TTBase import ImPdu
 from TTSocketHandler import TTSocket
 import traceback
@@ -247,4 +248,45 @@ def _getMsgListReq(user_id, session_type, session_id, msg_id_begin, cnt):
     pdu.setServiceId(BaseDefine_pb2.SID_MSG)
     pdu.setCommandId(BaseDefine_pb2.CID_MSG_LIST_REQUEST)
     return pdu.SerializeToString()
+
+def _deletemsgReq(req_user_id, msg_from_id, msg_to_id, msg_id, deltype):
+
+    log.info("req user id: {}, msg_from_id: {}, msg_to_id:{}, msg_id: {}, type:{}", req_user_id, msg_from_id, msg_to_id, msg_id, deltype)
+    req = Message_pb2.IMDeleteMsgReq()
+    req.Clear()
+    req.req_user_id = req_user_id
+    req.from_user_id = msg_from_id
+    req.to_user_id = msg_to_id
+    req.msg_id = msg_id
+    req.type = deltype
+    pdu = ImPdu.ImPdu()
+    pdu.setMsg(req.SerializeToString())
+    pdu.setServiceId(BaseDefine_pb2.SID_MSG)
+    pdu.setCommandId(BaseDefine_pb2.CID_MSG_DEL_MSG_REQ);
+    return pdu.SerializeToString()
+
+def _checkuserReq(user_id, session_id,t):
+    log.info("checkuser , user_id:{}, session_id:{}".format(user_id, session_id))
+    req = Control_pb2.IMUserCheckReq()
+    req.Clear()
+    req.user_id = user_id
+    req.session_id = session_id
+    pdu = ImPdu.ImPdu()
+    pdu.setMsg(req.SerializeToString())
+    pdu.setServiceId(BaseDefine_pb2.SID_CONTROL)
+    pdu.setCommandId(BaseDefine_pb2.CID_CONTROL_CHECK_USER_REQ)
+    return pdu.SerializeToString()
+
+def _getusersInfoByNameReq(user_id, name):
+    log.info("getuserinfo, userid:{}, name: {}".format(user_id, name))
+    req = Buddy_pb2.IMUsersInfoByNameReq()
+    req.Clear()
+    req.user_id = user_id
+    req.name_list.append(name)
+    pdu = ImPdu.ImPdu()
+    pdu.setMsg(req.SerializeToString())
+    pdu.setServiceId(BaseDefine_pb2.SID_BUDDY_LIST)
+    pdu.setCommandId(BaseDefine_pb2.CID_BUDDY_LIST_USER_INFO_BY_NAME_REQUEST)
+    return pdu.SerializeToString()
+
 

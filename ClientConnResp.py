@@ -74,3 +74,15 @@ def _GetMsgListResp(pdu):
     log.info(" last msgid : {}".format(resp.last_read_msg_id) )
     print msgList
 
+def _DeleteMsgResp(pdu):
+    resp = Message_pb2.IMDeleteMsgRsp.FromString(pdu.msg)
+    log.info("user_id: {}, result: {}".format(resp.user_id, resp.result))
+
+def _checkUserResp(pdu):
+    resp = Control_pb2.IMUserCheckRsp.FromString(pdu.msg)
+    log.info("user_id: {}, result_code: {}".format(resp.user_id, resp.result_code))
+def _getusersinfoByname(pdu):
+    resp = Buddy_pb2.IMUsersInfoByNameRsp.FromString(pdu.msg);
+    log.info("userid:{}, len:{}".format(resp.user_id, len(resp.user_info_list)))
+    idlist = [x.id for x in resp.user_info_list]
+    print "xxxxxxxxxxx", idlist

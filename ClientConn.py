@@ -161,6 +161,12 @@ class ClientConn(object):
 
         if pdu.command_id == CID_LOGIN_RES_USERLOGIN:
             self.handleLoginResponse(pdu)
+        elif pdu.command_id == CID_MSG_DEL_MSG_RSP:
+            ClientConnResp._DeleteMsgResp(pdu)
+        elif pdu.command_id == CID_CONTROL_CHECK_USER_RSP:
+            ClientConnResp._checkUserResp(pdu)
+        elif pdu.command_id == CID_BUDDY_LIST_USER_INFO_BY_NAME_RESPONSE:
+            ClientConnResp._getusersinfoByname(pdu)
         elif pdu.command_id == CID_BUDDY_LIST_RECENT_CONTACT_SESSION_RESPONSE:
             self.handleRecentContactSessionResponse(pdu)
         elif pdu.command_id == CID_BUDDY_LIST_USER_INFO_RESPONSE:
@@ -345,6 +351,17 @@ class ClientConn(object):
         pdu_msg = ClientConnReq._getMsgListReq(user_id, session_type, session_id, msg_id_begin, cnt)
         self._socket.send(pdu_msg)
 
+    def deletemsgReq(self, req_user_id, msg_from_id, msg_to_id, msg_id, deltype):
+        pdu_msg = ClientConnReq._deletemsgReq(req_user_id, msg_from_id, msg_to_id, msg_id, deltype)
+        self._socket.send(pdu_msg)
+
+    def checkuserReq(self, user_id, session_id, t):
+        pdu_msg = ClientConnReq._checkuserReq(user_id, session_id, t)
+        self._socket.send(pdu_msg)
+
+    def _getusersinfoByname(self, user_id, name):
+        pdu_msg = ClientConnReq._getusersInfoByNameReq(user_id, name)
+        self._socket.send(pdu_msg)
         
 #### FOR TEST ONLY ####
 #c = ClientConn("dj352801")

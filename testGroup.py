@@ -52,7 +52,10 @@ class ClientServer(object):
             #conn.getRecentSession(12460, 0)
             #conn.getUnreadMsgCount(2396)
             #conn.getLatestMsgId(2396, 2, 19)
-            conn.getMsgListReq(2396, 2, 19, 30, 3)
+            #conn.getMsgListReq(2396, 2, 19, 30, 3)
+            #conn.deletemsgReq(2396, 2396, 77, 3, 0)
+            #conn.checkuserReq(2396, 79, 0)
+            conn._getusersinfoByname(2396, "dj352893")
 
         for fd in self._fd_map.keys():
             c = self._fd_map[fd]
